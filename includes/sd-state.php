@@ -69,8 +69,6 @@ function sd_state_list(){
 			</div>
 		</div>
 	</div>
-
-
 	';
-	ob_clean();
+	ob_end_clean();
 }

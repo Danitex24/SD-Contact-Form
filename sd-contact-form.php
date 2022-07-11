@@ -80,11 +80,11 @@ function sd_my_save_error()
     file_put_contents(dirname(__file__).'/error_activation.txt', ob_get_contents());
 }
 add_action('activated_plugin','sd_my_save_error');
-
-register_deactivation_hook( __FILE__, 'sd_deactivation' );
 //deactivate_rules
-// require_once(plugin_dir_path(__FILE__).'/includes/sd-save.php');
-// require_once(plugin_dir_path(__FILE__).'/includes/sd-update.php');
+register_deactivation_hook( __FILE__, 'sd_deactivation' );
+//require other parts
+require_once(plugin_dir_path(__FILE__).'/includes/sd-form.php');
+require_once(plugin_dir_path(__FILE__).'/includes/sd-short-code.php');
 // require_once(plugin_dir_path(__FILE__).'/includes/sd-function.php');
 // require_once(plugin_dir_path(__FILE__).'/includes/sd-scripts.php');
 // require_once(plugin_dir_path(__FILE__).'/includes/sd-fields.php'); 
