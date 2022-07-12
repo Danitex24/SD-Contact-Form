@@ -10,12 +10,6 @@ function html_form_code() {
 	echo 'Your Email (required) <br/>';
 	echo '<input type="email" name="sd-email" value="' . ( isset( $_POST["sd-email"] ) ? esc_attr( $_POST["sd-email"] ) : '' ) . '" size="40" />';
 	echo '</p>';
-
-	echo '<p>';
-	echo 'Subject (required) <br/>';
-	echo '<input type="text" name="sd-subject" pattern="[a-zA-Z ]+" value="' . ( isset( $_POST["sd-subject"] ) ? esc_attr( $_POST["sd-subject"] ) : '' ) . '" size="40" />';
-	echo '</p>';
-
     echo '<p>';
 	echo 'State<br/>';
     echo '<select name="sd-state" id="state">';
@@ -23,7 +17,10 @@ function html_form_code() {
 	echo '</option>';
     echo '</select>';
 	echo '</p>';
-
+    echo '<p>';
+	echo 'Subject (required) <br/>';
+	echo '<input type="text" name="sd-subject" pattern="[a-zA-Z ]+" value="' . ( isset( $_POST["sd-subject"] ) ? esc_attr( $_POST["sd-subject"] ) : '' ) . '" size="40" />';
+	echo '</p>';
 	echo '<p>';
 	echo 'Your Message (required) <br/>';
 	echo '<textarea rows="10" cols="35" name="sd-message">' . ( isset( $_POST["sd-message"] ) ? esc_attr( $_POST["sd-message"] ) : '' ) . '</textarea>';

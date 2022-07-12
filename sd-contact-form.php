@@ -26,18 +26,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 function sd_Create_sdvip_Table() {
   global $wpdb;
           $charset_collate = $wpdb->get_charset_collate();
-          $table_name = $wpdb->prefix . 'sdvip';
-          $table_name2 = $wpdb->prefix . 'sd_vip_game_result';
+          $table_name = $wpdb->prefix . 'sd_cform';
+          $table_name2 = $wpdb->prefix . 'sd_api';
           $sql = "CREATE TABLE `$table_name` (
           `id` int(11) NOT NULL AUTO_INCREMENT,
-          `img` varchar(220) DEFAULT NULL,
-          `game_set` varchar(220) DEFAULT NULL,
-          `game_status` varchar(220) DEFAULT NULL,
-          `odds` varchar(220) DEFAULT NULL,
-          `melbet_code` varchar(220) DEFAULT NULL,
-          `paripesa_code` varchar(220) DEFAULT NULL,
-          `one_xbet_code` varchar(220) DEFAULT NULL,
-          `twenty_two_bet` varchar(50) DEFAULT NULL,
+          `name` varchar(220) DEFAULT NULL,
+          `email` varchar(220) DEFAULT NULL,
+          `phone` varchar(220) DEFAULT NULL,
+          `address` varchar(220) DEFAULT NULL,
+          `state` varchar(220) DEFAULT NULL,
+          `lg` varchar(220) DEFAULT NULL,
+          `city` varchar(220) DEFAULT NULL,
+          `subject` varchar(250) DEFAULT NULL,
+          `description` varchar(250) DEFAULT NULL,
           `date` date DEFAULT NULL,
           `note` text DEFAULT NULL,
           PRIMARY KEY(id)
@@ -46,12 +47,9 @@ function sd_Create_sdvip_Table() {
 //create second tb
   $sql2 = "CREATE TABLE `$table_name2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `game_type` varchar(100) DEFAULT NULL,
-  `home` varchar(50) DEFAULT NULL,
-  `home2` varchar(50) DEFAULT NULL,
-  `away` varchar(50) DEFAULT NULL,
-  `away2` varchar(50) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `api` varchar(50) DEFAULT NULL,
+  `call` varchar(50) DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY(id)
   ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
